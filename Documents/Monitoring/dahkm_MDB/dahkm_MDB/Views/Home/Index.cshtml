@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+<h1>Monitoring Database</h1>
+</div>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<title>Pie Chart</title>
+</head>
+<body>
+	<div id="chartContainer"></div>
+	<script type="text/javascript">
+
+		window.onload = function () {
+			var chart = new CanvasJS.Chart("chartContainer", {
+				title: {
+					text: "Pie Chart Test"
+				},
+				animationEnabled: true,
+				legend: {
+					verticalAlign: "center",
+					horizontalAlign: "left",
+					fontSize: 20,
+					fontFamily: "Helvetica"
+				},
+				theme: "light3",
+				data: [
+					{
+						type: "pie",
+						indexLabelFontFamily: "Garamond",
+						indexLabelFontSize: 20,
+						indexLabel: "{label} {y}%",
+						startAngle: -20,
+						showInLegend: true,
+						toolTipContent: "{legendText} {y}%",
+						dataPoints: [
+							{ y: 73, legendText: "", label: "" },
+							{ y: 13, legendText: "", label: "" },
+							{ y: 8, legendText: "", label: "" }
+						]
+					}
+				]
+			});
+			chart.render();
+		};
+	</script>
+
+</body>
+</html>	
